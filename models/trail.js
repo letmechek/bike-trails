@@ -17,6 +17,7 @@ const trailSchema = new Schema({
       type: String,
      
     },
+    
     routes: {
       type: String,
       

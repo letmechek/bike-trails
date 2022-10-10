@@ -28,7 +28,7 @@ function index(req, res) {
 
   function show(req, res) {
     Trail.findById(req.params.id)
-      .populate('cast').exec( function(err, movie) {
+      .populate('cast').exec( function(err, trail) {
       res.render('trails/show', { title: 'Trail Detail', trail });
     });
   };
