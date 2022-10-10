@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+<img src="https://d1pk12b7bb81je.cloudfront.net/generated/1920x910/images/photos/slideshows/1481920699_1481920687-bikingslideshow.jpg">
+<table id="list">
+    <h1 class=" header">Welcome To Bike-Trails</h1>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Routes</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% trails.forEach(function(m) { %>
+        <tr>
+          <td><%= m.title %></td>
+          <td><%= m.routes %></td>
+          <td><a href="/trails/<%= m._id %>">DETAILS</a></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>

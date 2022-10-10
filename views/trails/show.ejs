@@ -1,0 +1,15 @@
+<section id="show-page">
+    <div>Title: </div>
+    <div><%= trail.title %></div>
+    <div>Route: </div>
+    <div><%= trail.route %></div>
+    <div>Cast:</div>
+    <ul>
+      <%- trail.cast.map(p => `<li>${p.name} </li>`) %>
+    </ul>
+
+  <br><br>
+ 
+  
+
+  
