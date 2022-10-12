@@ -1,20 +1,20 @@
 <%- include('../partials/header') %>
-<img src="https://d1pk12b7bb81je.cloudfront.net/generated/1920x910/images/photos/slideshows/1481920699_1481920687-bikingslideshow.jpg">
-<table id="list">
+<img class="backImage" src="https://d1pk12b7bb81je.cloudfront.net/generated/1920x910/images/photos/slideshows/1481920699_1481920687-bikingslideshow.jpg">
+<table id="li">
     <h1 class=" header">Welcome To Bike-Trails</h1>
     <thead>
       <tr>
-        <th>Title</th>
-        <th>Routes</th>
-        <th></th>
+         <th>location</th>
+        <th>terrain</th>
       </tr>
     </thead>
     <tbody>
       <% trails.forEach(function(m) { %>
         <tr>
-          <td><%= m.title %></td>
-          <td><%= m.routes %></td>
-          <td><a href="/trails/<%= m._id %>">DETAILS</a></td>
+          <td><%= m.location %></td>
+          <td><%= m.terrain %></td>
+          <td><a href="/trails/<%= m._id %>"></a></td>
+          <td><a href="/trails/<%= m._id %>/edit">EDIT</a></td>
         </tr>
         <% }); %>
       </tbody>

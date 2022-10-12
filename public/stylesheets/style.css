@@ -64,8 +64,9 @@ nav > a.active {
 }
 
 #new-form {
-  display: grid;
-  grid-gap: 100px;
+  display: inline;
+  margin-left: 30%;
+  margin-top: 10%;
   grid-template-columns: repeat(2, minmax(auto, 22rem));
 }
 
@@ -86,3 +87,36 @@ nav > a.active {
   font-size: 3em;
 }
 
+.backImage{
+   max-width:100%;
+   height:auto
+}
+
+.li {
+  display: flex;
+  padding-left: 20%;
+}
+
+.a{
+  background-color: greenyellow;
+  border-color: transparent;
+}
+
+/* tr {
+  font-size: 100%;
+  display: flex;
+  justify-content: space-evenly
+} */
+
+#show-page div:nth-child(odd) {
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  font-size: large;
+  justify-content: space-around;
+  align-items: center;
+}
+#show-page div:nth-child(even){
+  margin-left: 50%;
+  padding: 1%;
+}

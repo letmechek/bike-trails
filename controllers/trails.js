@@ -4,7 +4,10 @@ module.exports = {
     index,
     new: newTrail,
     create,
-    show
+    show,
+    edit,
+    update
+    
 }
 
 function index(req, res) {
@@ -27,8 +30,31 @@ function index(req, res) {
   }
 
   function show(req, res) {
-    Trail.findById(req.params.id)
-      .populate('cast').exec( function(err, trail) {
+    Trail.findById(req.params.id,function(err, trail) {
       res.render('trails/show', { title: 'Trail Detail', trail });
-    });
+    }); 
+     
   };
+
+ 
+  function edit(req, res) {
+    Trail.findOne({'trails._id': req.params.id}, function(err, trail) {
+      console.log(trail)
+      // if (err || !trail) return res.redirect('/trails');
+      res.render('trails/edit', {trail});
+    });
+  }
+
+  function update(req, res) {
+    Trail.findOneAndUpdate(
+      {_id: req.params.id, userRecommending: req.user._id},
+    
+      req.body,
+     
+      {new: true},
+      function(err, trail) {
+        if (err || !trail) return res.redirect('/trails');
+        res.redirect(`/trails/${trail._id}`);
+      }
+    );
+  }
